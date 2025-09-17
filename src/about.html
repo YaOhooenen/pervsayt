@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>О нас - Project-1</title>
+    <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="asd"><a class="site-header__brand" href="http://127.0.0.1:3002/src/index.html">PROJECT-1</a></div>
+        <!-- Главное меню навигации -->
+        <nav>
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li><a class="site-nav__link site-nav__link--active" href="about.html">О нас</a></li>
+                <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" type="button" aria-pressed="false">тема</button>
+        <script defer>
+            const KEY='theme', btn=document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+            // Автовыбор: системная тема или сохранённый выбор пользователя
+            if(localStorage.getItem(KEY)==='dark' || (!localStorage.getItem(KEY) && prefersDark)){
+                document.body.classList.add('theme-dark');
+                btn?.setAttribute('aria-pressed','true');
+            }
+            // Переключение по кнопке с сохранением в localStorage
+            btn?.addEventListener('click', ()=>{
+                const isDark=document.body.classList.toggle('theme-dark');
+                btn.setAttribute('aria-pressed', String(isDark));
+                localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+            });
+        </script>
+    </header>
+    <main class="container">
+        <!-- Простые "хлебные крошки" -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="index.html">Главная</a> →
+            <span>О нас</span>
+        </nav>
+        <h1>О нашей компании</h1>
+        <section class="section">
+            <h2 class="section__title">Наша история</h2>
+            <p>Пришел я как-то на семинар по фронтэнд и бэкэнд разработке</p>
+        </section>
+        <section class="section">
+            <h2 class="section__title">Наша команда</h2>
+            <p>Крутая команда из одного второкурсника МИРЭА.</p>
+            <div class="media-container">
+                <div class="sas">
+                    <img src="../asse/monk.png" alt="Наш создатель">
+                    <h2>↑ Наш создатель ↑</h2>
+                </div>
+                <div>
+                    <video class="media" controls preload="metadata" playsinline width="960" height="540" poster="../asse/anon.jpeg">
+                        <source src="../asse/monk-dance.mp4" type="video/mp4"> <!-- основной формат -->
+                        <track kind="captions" srclang="ru" src="video/captions-ru.vtt" label="Русские субтитры" default>
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Project-1. Все права защищены.</p>
+        <p>Телефон: +7 (999) 999-99-99</p>
+    </footer>
+</body>
+</html>
