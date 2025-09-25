@@ -6,4 +6,4 @@
 
 ## Ссылки
 
-- [Публичная страница на GitHub Pages](https://github.com/YaOhooenen/pervsayt)
+- [Публичная страница на GitHub Pages](http://127.0.0.1:3000/src/index.html)
