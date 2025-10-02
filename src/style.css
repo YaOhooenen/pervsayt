@@ -257,7 +257,7 @@ img, video {
 }
 /* Стиль для адаптивного видео-контейнера */
 .media-container {
-    width: min(100%, 960px);
+    width: min(75%, 960px);
     margin-inline: auto;
     background-color: var(--color-bg-secondary);
     border-radius: var(--radius);
@@ -336,6 +336,61 @@ footer {
     margin-bottom: 50px;
 }
 
-.sas{
-    margin: 10px;
+.cont {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1001px) {
+    .cont {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 768px) {
+    .cont {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .cont {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sas {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.imsize {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin: 0 auto 15px;
+}
+
+.derm {
+    margin: 0;
+    color: #0b0b0b;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+body.theme-dark .sas {
+    background: #3b3b3b;
+    border-color: #444444;
+}
+
+body.theme-dark .derm {
+    color: #f0f0f0;
 }
