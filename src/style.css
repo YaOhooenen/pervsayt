@@ -257,7 +257,7 @@ img, video {
 }
 /* Стиль для адаптивного видео-контейнера */
 .media-container {
-    width: min(75%, 960px);
+    width: min(100%, 960px);
     margin-inline: auto;
     background-color: var(--color-bg-secondary);
     border-radius: var(--radius);
